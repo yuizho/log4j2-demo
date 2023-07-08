@@ -11,6 +11,10 @@
         <Console name="console3" target="SYSTEM_OUT">
             <PatternLayout pattern="console3 %style{%d{ISO8601}} %highlight{%-5level}[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
         </Console>
+        <Console name="console-marker" target="SYSTEM_OUT">
+            <PatternLayout pattern="console-marker %style{%d{ISO8601}} %highlight{%-5level}[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
+            <MarkerFilter marker="important" />
+        </Console>
     </Appenders>
     <Loggers>
         <Logger name="org.example.application" level="debug" additivity="false">
@@ -25,6 +29,7 @@
         <!-- これを確実にerrorだけ出すためには、appender側でFilterする必要がある -->
         <Root level="error">
             <AppenderRef ref="console1"/>
+            <AppenderRef ref="console-marker"/>
         </Root>
     </Loggers>
 </configuration>
