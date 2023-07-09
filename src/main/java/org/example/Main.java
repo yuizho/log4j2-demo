@@ -1,5 +1,6 @@
 package org.example;
 
+import com.github.yuizho.External;
 import org.example.application.AccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,5 +21,7 @@ public class Main {
         logger.error("this is error log!!");
 
         logger.info(IMPORTANT, "this is marked as important!!");
+
+        new External().printLogs();
     }
 }
